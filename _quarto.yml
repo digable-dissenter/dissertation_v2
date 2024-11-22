@@ -1,0 +1,75 @@
+project:
+  type: book
+  output-dir: _book
+
+book: 
+  title: Quantifying Pressing Effectiveness and Its Influence on Formations in Football
+  chapters: 
+    - index.qmd 
+    - chapters/chapter-00_introduction/_introduction.qmd
+    - endmatter/bibliography/_references.qmd
+
+
+department: Department of Statistical Sciences
+degree: Master of Philosophy
+
+
+toc: true
+toc-depth: 3
+top-level-headers: true
+toc-merge: true
+toc-own-page: true
+toc-title: "Table of Contents"
+number-sections: true
+format-links: true
+
+
+format:
+  pdf:
+    documentclass: report
+    font-size: 12pt 
+    paper-size: a4       
+    number-sections: true   
+    colorlinks: false
+    geometry:
+      - left=4.5cm
+      - right=4.5cm
+      - marginparwidth=5.5cm
+      - twoside=true
+    include-in-header:
+      - text: |
+          \usepackage{graphicx}
+          \usepackage{fontspec}
+          \usepackage{newunicodechar}
+          \newfontfamily\symbolfont{Fira Sans}
+          \setmainfont{Charter}
+          \setsansfont{Montserrat}
+          \setmonofont{JetBrains Mono NL}
+
+          \DeclareTextFontCommand{\textfallback}{\symbolfont}
+          \newunicodechar{→}{\textfallback{→}}
+          \newunicodechar{₂}{\textfallback{₂}}
+          \newunicodechar{⁻}{\textfallback{⁻}}
+          \newunicodechar{ă}{\textfallback{ă}}
+          \newunicodechar{≠}{\textfallback{≠}}
+          \newunicodechar{‑}{\textfallback{-}}
+
+          \usepackage{ucharclasses}
+          \setTransitionsForGreek{\begingroup\symbolfont}{\endgroup}
+
+          \usepackage{lscapeenhanced}
+          \newcommand{\blandscape}{\begin{landscape}}
+          \newcommand{\elandscape}{\end{landscape}}
+    include-before-body:
+      - frontmatter/titlepage.tex
+  docx:
+    toc: true
+    toc-depth: 3
+    number-sections: true
+
+supervisor: |
+  Mr. Neil Watson
+wordcount: |
+  Approx. 35,000 words
+keywords: [football analytics, pressing effectiveness, machine learning, spatial analysis, formations]
+bibliography: endmatter/bibliography/references.bib

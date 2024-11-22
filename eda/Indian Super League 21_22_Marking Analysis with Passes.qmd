@@ -1,0 +1,350 @@
+---
+title: "Indian Super League 21/22"
+editor: visual
+---
+
+```{r}
+#| label: libraries
+
+library(StatsBombR)
+library(dplyr)
+library(ggplot2)
+library(hms)
+```
+
+```{r}
+#| label: data_load
+
+# isl_comp <- FreeCompetitions() %>%
+#  filter(competition_id == 1238)
+
+# isl_matches <- FreeMatches(isl_comp)
+
+isl_events <- free_allevents(MatchesDF = isl_matches, Parallel = T)
+isl_events <- allclean(isl_events)
+```
+
+```{r}
+
+isl_events_new <- isl_events %>%
+  select(timestamp, match_id, player.id, position.name, team.id, team.name, type.name, pass.angle, pass.outcome.name, ball_receipt.outcome.name, under_pressure)
+
+
+# 1. Convert `timestamp` column to POSIXct for time calculations
+isl_events_new <- isl_events_new %>%
+  mutate(timestamp = as_hms(timestamp))
+
+# isl_events$timestamp <- as.POSIXct(isl_events$timestamp, format = "%H:%M:%S.%f")
+```
+
+```{r}
+
+
+# 2. Reverse `pass.angle` column to calculate back passes
+isl_events_new <- isl_events_new %>%
+  mutate(pass.angle = pass.angle * -1)
+```
+
+```{r}
+
+
+# 3. Add lag and lead columns to track press-related events
+isl_events_new <- isl_events_new %>%
+  mutate(
+    # Previous event and pressing player information
+    last_event = lag(type.name),
+    pressing_player = lag(player.id),
+    pressing_player_position = lag(position.name),
+    last_timestamp = lag(timestamp),
+    
+    # Next 3 events following a pressure
+    next_event = lead(type.name),
+    next_event_2 = lead(type.name, 2),
+    next_event_3 = lead(type.name, 3),
+    
+    # Player IDs for next events
+    next_event_player = lead(player.id),
+    next_event_2_player = lead(player.id, 2),
+    next_event_3_player = lead(player.id, 3),
+    
+    # Timestamps for next 3 events
+    next_event_timestamp = lead(timestamp),
+    next_event_2_timestamp = lead(timestamp, 2),
+    next_event_3_timestamp = lead(timestamp, 3),
+    
+    # Pass angles for next events
+    next_event_pass_angle = lead(pass.angle),
+    next_event_2_pass_angle = lead(pass.angle, 2),
+    next_event_3_pass_angle = lead(pass.angle, 3),
+    
+    # Outcomes for next events
+    next_event_outcome_name = lead(pass.outcome.name),
+    next_event_2_outcome_name = lead(pass.outcome.name, 2),
+    next_event_3_outcome_name = lead(pass.outcome.name, 3)
+  )
+```
+
+```{r}
+
+
+# 4. Filter for ball receipts under pressure
+rec_under_press_df <- isl_events_new %>%
+  filter(
+    type.name == "Ball Receipt*" & last_event == "Pressure" &
+      (under_pressure == 1 | is.na(under_pressure))
+  )
+```
+
+```{r}
+
+
+# Define events indicating a successful pressure outcome
+possible_events <- c("Dispossessed", "Miscontrol", "Block", "Duel")
+
+# 5.Initialise columns to flag successfu%l pressure outcomes and calculate time differences
+rec_under_press_df <- rec_under_press_df %>%
+  mutate(
+    next_event_code = if_else(next_event %in% possible_events, 1, if_else(next_event == "Pass", 2, 0)),
+    next_event_2_code = if_else(next_event_2 %in% possible_events, 1, ifelse(next_event_2 == "Pass", 2, 0)),
+    next_event_3_code = if_else(next_event_3 %in% possible_events, 1, ifelse(next_event_3 == "Pass", 2, 0)),
+    
+    # Time differences for each next event with NA handling
+    timechange_next_event = if_else(!is.na(next_event_timestamp) & !is.na(last_timestamp),
+                                    as.numeric(difftime(next_event_timestamp, last_timestamp, units = "secs")), NA_real_),
+    timechange_next_event_2 = if_else(!is.na(next_event_2_timestamp) & !is.na(last_timestamp),
+                                      as.numeric(difftime(next_event_2_timestamp, last_timestamp, units = "secs")), NA_real_),
+    timechange_next_event_3 = if_else(!is.na(next_event_3_timestamp) & !is.na(last_timestamp),
+                                      as.numeric(difftime(next_event_3_timestamp, last_timestamp, units = "secs")), NA_real_),
+    
+    # Flags if the pressing player is involved in the subsequent events
+    next_player_same_as_pressing = if_else(pressing_player == next_event_player, 1, 0),
+    next_2_player_same_as_pressing = if_else(pressing_player == next_event_2_player, 1, 0),
+    next_3_player_same_as_pressing = if_else(pressing_player == next_event_3_player, 1, 0)
+  )
+```
+
+```{r}
+
+
+# 6. Separate successful and unsuccessful initial pressures
+suc_initial_press_df <- rec_under_press_df %>%
+  filter(!is.na(ball_receipt.outcome.name))
+
+unsuc_initial_press_df <- rec_under_press_df %>%
+  filter(!is.na(ball_receipt.outcome.name))
+```
+
+```{r}
+
+
+# 7. Identify successful pressures within next 3 events and within a 2-second window
+suc_press_df <- unsuc_initial_press_df %>%
+  filter(
+    (next_event_code == 1 | next_event_2_code == 1 | next_event_3_code == 1) &
+      (next_player_same_as_pressing == 1 | next_2_player_same_as_pressing == 1 | next_3_player_same_as_pressing <= 2)
+  )
+
+# Aggregate data for successful pass pressures
+pass_df <- rec_under_press_df %>%
+  filter((next_event_code == 2 | next_event_2_code == 2 | next_event_3_code == 2) & timechange_next_event_3 <= 2) %>%
+  mutate(next_pass_outcome_name = case_when(
+    next_event_code == 2 ~ next_event_outcome_name,
+    next_event_2_code == 2 ~ next_event_2_outcome_name,
+    next_event_3_code == 2 ~ next_event_3_outcome_name
+    ),
+    next_pass_angle = case_when(
+      next_event_code == 2 ~ next_event_pass_angle,
+      next_event_2_code == 2 ~ next_event_2_pass_angle,
+      next_event_3_code == 2 ~ next_event_3_pass_angle
+    ),
+    timechange_next_pass = case_when(
+      next_event_code == 2 ~ timechange_next_event,
+      next_event_2_code == 2 ~ timechange_next_event_2,
+      next_event_3_code == 2 ~ timechange_next_event_3
+    )
+  ) %>%
+  filter(timechange_next_pass <= 2) %>%
+  mutate(next_pass_outcome_name = if_else(is.na(next_pass_outcome_name), "Successful", next_event_outcome_name))
+
+# Define successful pass pressures
+suc_press_pass_df <- pass_df %>%
+  filter(grepl("Incomplete|Out", next_pass_outcome_name) | between(next_event_pass_angle, -pi/4, pi/4))
+```
+
+```{r}
+
+
+# 8. Aggregate pressures by player to summarise results
+# Total pressures
+total_press_by_player <- rec_under_press_df %>%
+  group_by(pressing_player) %>%
+  summarise(total_pressures = n()) %>%
+  arrange(desc(total_pressures))
+
+total_press_by_player_position   <- rec_under_press_df %>%
+  group_by(pressing_player, pressing_player_position) %>%
+  summarise(total_pressures = n()) %>%
+  arrange(desc(total_pressures))
+
+# Successful initial pressures
+initial_press_players <- suc_initial_press_df %>%
+  group_by(pressing_player) %>%
+  summarise(successful_initial_pressure = n()) %>%
+  arrange(desc(successful_initial_pressure))
+
+initial_press_players_position  <- suc_initial_press_df %>%
+  group_by(pressing_player, pressing_player_position) %>%
+  summarise(successful_initial_pressure = n()) %>%
+  arrange(desc(successful_initial_pressure))
+
+# Successul pressures within 2 seconds
+secondary_press_players <- suc_press_df %>%
+  group_by(pressing_player) %>%
+  summarise(successful_2second_pressure = n()) %>%
+  arrange(desc(successful_2second_pressure))
+
+secondary_press_players_position <- suc_press_df %>%
+  group_by(pressing_player, pressing_player_position) %>%
+  summarise(successful_2second_pressure = n()) %>%
+  arrange(desc(successful_2second_pressure))
+
+# Successful pass pressures
+pass_press_players <- suc_press_pass_df %>%
+  group_by(pressing_player) %>%
+  summarise(successful_pass_pressure = n()) %>%
+  arrange(desc(successful_pass_pressure))
+
+pass_press_players_position <- suc_press_pass_df %>%
+  group_by(pressing_player, pressing_player_position) %>%
+  summarise(successful_pass_pressure = n()) %>%
+  arrange(desc(successful_pass_pressure))
+
+
+# Combine all results
+pressures_analysis_df <- total_press_by_player %>%
+  left_join(initial_press_players, by = "pressing_player") %>%
+  left_join(secondary_press_players, by = "pressing_player") %>%
+  left_join(pass_press_players, by = "pressing_player") %>%
+  mutate(
+    successful_initial_pressure = replace_na(successful_initial_pressure, 0),
+    successful_2second_pressure = replace_na(successful_2second_pressure, 0),
+    successful_pass_pressure = replace_na(successful_pass_pressure, 0),
+    `%_successful_initial` = successful_initial_pressure / total_pressures,
+    `%_successful_2second` = successful_2second_pressure / total_pressures,
+    `%_successful_pass` = successful_pass_pressure / total_pressures,
+    `%_successful_total` = (successful_initial_pressure + successful_2second_pressure + successful_pass_pressure) / total_pressures
+  )
+```
+
+```{r}
+
+
+# Center Back Analysis
+cb_analysis <- pressures_analysis_position_df %>%
+  filter(grepl("Center Back", pressing_player_position)) %>%
+  group_by(pressing_player) %>%
+  summarise(
+    total_pressures = sum(total_pressures),
+    successful_initial_pressure = sum(successful_initial_pressure),
+    successful_2second_pressure = sum(successful_2second_pressure),
+    successful_pass_pressure = sum(successful_pass_pressure)
+  ) %>%
+  mutate(
+    `%_successful_initial` = successful_initial_pressure / total_pressures,
+    `%_successful_2second` = successful_2second_pressure / total_pressures,
+    `%_successful_pass` = successful_pass_pressure / total_pressures,
+    `%_successful_total` = (successful_initial_pressure + successful_2second_pressure + successful_pass_pressure) / total_pressures
+  )
+
+# Filter to show players at or above the median total pressures
+cb_median <- median(cb_analysis$total_pressures, na.rm = TRUE)
+cb_top_players <- cb_analysis %>%
+  filter(total_pressures >= cb_median) %>%
+  arrange(desc(`%_successful_total`)) %>%
+  head(10)
+
+# Fullback Analysis
+fb_analysis <- pressures_analysis_position_df %>%
+  filter(grepl("Right Back|Left Back|Right Wing Back|Left Wing Back", pressing_player_position)) %>%
+  group_by(pressing_player) %>%
+  summarise(
+    total_pressures = sum(total_pressures),
+    successful_initial_pressure = sum(successful_initial_pressure),
+    successful_2second_pressure = sum(successful_2second_pressure),
+    successful_pass_pressure = sum(successful_pass_pressure)
+  ) %>%
+  mutate(
+    `%_successful_initial` = successful_initial_pressure / total_pressures,
+    `%_successful_2second` = successful_2second_pressure / total_pressures,
+    `%_successful_pass` = successful_pass_pressure / total_pressures,
+    `%_successful_total` = (successful_initial_pressure + successful_2second_pressure + successful_pass_pressure) / total_pressures
+  )
+
+# Filter to show players at or above the median total pressures
+fb_median <- median(fb_analysis$total_pressures, na.rm = TRUE)
+fb_top_players <- fb_analysis %>%
+  filter(total_pressures >= fb_median) %>%
+  arrange(desc(`%_successful_total`)) %>%
+  head(10)
+
+# Central/Defensive Midfielder Analysis
+mid_analysis <- pressures_analysis_position_df %>%
+  filter(grepl("Center Midfield|Defensive Midfield", pressing_player_position)) %>%
+  group_by(pressing_player) %>%
+  summarise(
+    total_pressures = sum(total_pressures),
+    successful_initial_pressure = sum(successful_initial_pressure),
+    successful_2second_pressure = sum(successful_2second_pressure),
+    successful_pass_pressure = sum(successful_pass_pressure)
+  ) %>%
+  mutate(
+    `%_successful_initial` = successful_initial_pressure / total_pressures,
+    `%_successful_2second` = successful_2second_pressure / total_pressures,
+    `%_successful_pass` = successful_pass_pressure / total_pressures,
+    `%_successful_total` = (successful_initial_pressure + successful_2second_pressure + successful_pass_pressure) / total_pressures
+  )
+
+# Filter to show players at or above the median total pressures
+mid_median <- median(mid_analysis$total_pressures, na.rm = TRUE)
+mid_top_players <- mid_analysis %>%
+  filter(total_pressures >= mid_median) %>%
+  arrange(desc(`%_successful_total`)) %>%
+  head(10)
+
+# Output the top players for each analysis
+cb_top_players
+fb_top_players
+mid_top_players
+
+```
+
+```{r}
+
+
+# Create the `next_pass_outcome_name` column within `rec_under_press_df`
+rec_under_press_df <- rec_under_press_df %>%
+  mutate(
+    next_pass_outcome_name = case_when(
+      next_event_code == 2 ~ next_event_outcome_name,
+      next_event_2_code == 2 ~ next_event_2_outcome_name,
+      next_event_3_code == 2 ~ next_event_3_outcome_name
+    )
+  )
+
+
+# Analysis by position
+pressures_analysis_position_df <- rec_under_press_df %>%
+  group_by(pressing_player, pressing_player_position) %>%
+  summarise(
+    total_pressures = n(),
+    successful_initial_pressure = sum(ifelse(next_event_outcome_name == "Success", 1, 0)),
+    successful_2second_pressure = sum(ifelse(timechange_next_event_3 <= 2, 1, 0)),
+    successful_pass_pressure = sum(ifelse(next_pass_outcome_name %in% c("Incomplete", "Out"), 1, 0))
+  ) %>%
+  mutate(
+    `%_successful_initial` = successful_initial_pressure / total_pressures,
+    `%_successful_2second` = successful_2second_pressure / total_pressures,
+    `%_successful_pass` = successful_pass_pressure / total_pressures,
+    `%_successful_total` = (successful_initial_pressure + successful_2second_pressure + successful_pass_pressure) / total_pressures
+  )
+```

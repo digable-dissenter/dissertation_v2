@@ -1,0 +1,202 @@
+\documentclass[12pt]{article}
+\usepackage[english]{babel}
+\bibliographystyle{plainnat}
+\usepackage{url}
+\usepackage[utf8x]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\graphicspath{{images/}}
+\usepackage{parskip}
+\usepackage{fancyhdr}
+\usepackage{vmargin}
+\usepackage{float}
+\usepackage{booktabs}
+\usepackage{listings}
+\setmarginsrb{3 cm}{2.5 cm}{3 cm}{2.5 cm}{1 cm}{1.5 cm}{1 cm}{1.5 cm}
+
+\title{Locally Linear Embedding}								% Title
+\author{Ndivhuwo Nyase, Kenneth Ssekimpi}								% Author
+\date{\today}											% Date
+
+\makeatletter
+\let\thetitle\@title
+\let\theauthor\@author
+\let\thedate\@date
+\makeatother
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\theauthor}
+\lhead{\thetitle}
+\cfoot{\thepage}
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{titlepage}
+        \centering
+    \vspace*{0.5 cm}
+    \includegraphics[scale = 0.75]{UCT.jpg}\\[1.0 cm]	% University Logo
+    \textsc{\LARGE University of Cape Town}\\[2.0 cm]	% University Name
+	\textsc{\Large STA5077Z}\\[0.5 cm]				% Course Code
+	\textsc{\large Unsupervised Learning}\\[0.5 cm]				% Course Name
+	\rule{\linewidth}{0.2 mm} \\[0.4 cm]
+	{ \huge \bfseries \thetitle}\\
+	\rule{\linewidth}{0.2 mm} \\[1.5 cm]
+	
+	\begin{minipage}{0.4\textwidth}
+		\begin{flushleft} \large
+			\emph{Author:}\\
+			\theauthor
+			\end{flushleft}
+			\end{minipage}~
+			\begin{minipage}{0.4\textwidth}
+			\begin{flushright} \large
+			\emph{Student Number:} \\
+			NYSNDI001, SSKKEN001									% Your Student Number
+		\end{flushright}
+	\end{minipage}\\[2 cm]
+	
+ 
+	
+\end{titlepage}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\tableofcontents
+\pagebreak
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Introduction to the Topic}
+Multivariate and high dimensional data has become increasingly prevalent, offering deep insights into diverse fields . However, the abundance of this high-dimensional data presents a central challenge in extracting an informative and concise representation from the data without losing its inherent complexity. Locally Linear Embedding (LLE) is a non-linear dimensionality reduction and feature extraction technique, that takes an n-dimensional manifold and casts it into a lower dimensional space whilst preserving the geometric features of the manifold. This implies that points situated near each other in the high-dimensional input space should remain close to each other in the lower-dimensional embedding space created by LLE. Similarly, points far from one another in the input space should also be distant in the embedded space.
+
+\section{The uses of LLE}
+The LLE algorithm, summarized below is based on simple geometric intuitions. Suppose the data consist of $N$ real-valued vectors $X
+i$, each of dimensionality D, sampled from some underlying manifold. 
+
+In the following section, we provide a detailed step-by-step breakdown of the Locally Linear Embedding (LLE) algorithm.
+\begin{enumerate}
+    \item Finding the K-nearest neighbour: 
+    Computes the neighbors of each data point, $x_i$.
+    \item Weighted aggregation of the neighbours:
+    Computes the weights $W$ that best reconstruct each data point $x_i$ from its neighbors, minimizing the cost by constrained linear fits.
+
+    Reconstruction errors are measured by the cost function:
+\begin{equation}
+\epsilon(W) = \sum_{i} \left\| x_i - \sum_{j} W_{ij} x_j \right\|^2
+\end{equation}
+
+    \item New vector space $Y$ such that we minimize the cost:
+    Computes the vectors $y_i$ best reconstructed by the weights $W$, minimizing the quadratic form in by its bottom nonzero eigenvectors.
+    \label{alg}
+\end{enumerate}
+
+The Figure \ref{fig:image} illustrates the fundamental steps of the Locally Linear Embedding (LLE) algorithm described above.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{lle.jpeg}
+    \caption{Illustration of the LLE algorithm described above.}
+    \label{fig:image}
+\end{figure}
+
+
+Locally Linear Embedding (LLE) is a prominent technique primarily utilized for dimensionality reduction. Its core applications encompass:
+
+\begin{enumerate}
+    \item \textbf{Visualization}: Transforming high-dimensional data into 2D or 3D formats, facilitating easier visualization of patterns or structures within the data.
+    
+    \item \textbf{Manifold Learning}: LLE helps reveal hidden patterns in complex data, making tasks like image segmentation, and object detection.
+
+    \item \textbf{Feature extraction}: LLE can be used to extract features from high-dimensional data that are more informative and discriminative than the original features. This can be useful for tasks such as machine learning and data mining. 
+
+\end{enumerate}
+
+
+\section{Literature review}
+
+
+
+In the literature review section, we will explore the application areas of LLE whilst highlighting various forms of LLE and demonstrating their utilization in various research fields.
+
+Supervised LLE has been employed as a feature extraction method on several benchmark data sets, demonstrating its efficacy particularly with high-dimensional data possessing a clear manifold structure \cite{de2003supervised}.
+
+Moreover, Guided Locally Linear Embedding extracts a low-dimensional global coordinate system that accurately mirrors the embedded manifold. Yet, in contrast to LLE, it yields an embedding where specific modes of variation remain intact. Such a feature can enhance numerous supervised learning activities, spanning from pattern recognition and regression to data visualization. An example of this was being used as dimensionality reduction representation for USPS handwritten digits data set. Which can be further used for analysis.\cite{alipanahi2011guided}.
+
+In the next section, we'll highlight the main advantages and disadvantages of using the LLE algorithm.
+\subsection{Advantages}
+An advantage of LLE over Principal Component Analysis (PCA) emerges in its ability to represent complex manifolds, for example images of faces under varied lighting or intricate voice signals. \cite{mekuz2005face}. By emphasizing the retention of local relationships and spatial features in the data.
+
+
+\subsection{Disadvantages}
+While LLE offers notable benefits in the field of dimensionality reduction, it's important to understand its drawbacks. This section delves into those limitations.
+
+A big disadvantage of LLE is if the data is sparse or uneven sampling, LLE may inevitably encounter challenges in accurately capturing the non-uniform distortions and intricacies \cite{chen2011locally}.
+Another disadvantage of LLE is very sensitive to noise \cite{chen2011locally}. Therefore  noise can disrupt the extraction of low-dimensional coordinates.
+
+In addition to this, the algorithm's outcomes are notably sensitive to its two control parameters: the number of neighbors of each data point and the regularization parameter.
+
+That said, there are extensions to the LLE algorithm that have been implemented to overcome the proposed limitations such as out-of-sample extensions of LLE, and supervised LLE. 
+
+\section{Code Example}
+The code below generates a Swiss roll data set, computes the LLE embedding of the data set, and plots the original data set and the embedded data set. The Swiss roll data set consists of a synthetic rolled-up three-dimensional plane, with points on the plane randomly distributed and coloured. The swissroll() function from the KODAMA package generates a Swiss roll data set, which is a type of non-linear data commonly used to dimensionality reduction techniques.  The do.lle() function from Rdimtools computes the LLE embedding of the data set with the number of dimensions we wish to reduce the data to set to at two, while the ggplot2 package is used to plot the data.
+
+The plots in Figure 2 shows scatterplot of the original data points (randomly distributed and coloured in the shape of a square), whilst Figure 3 forms a titled version of Figure 2, with the colours changing smoothly from left to right. This demonstrates that the transformed data set, i.e. Figure 3, has preserved the original structure of the original data.
+
+
+
+\begin{lstlisting}[language=R]
+library('ggplot2')
+library('KODAMA')
+library('Rdimtools')
++
+# Number of samples
+n_samples <- 1000
+
+# Generate a Swiss roll data set
+swiss_roll_data  <- swissroll(N = n_samples)
+
+# Compute the LLE embedding of the Swiss roll data set
+lle_embedding <- do.lle(swiss_roll_data, ndim  = 2)
+
+# Convert to dataframe for plotting
+lle_emb_data <- as.data.frame(lle_embedding$Y)
+colnames(lle_emb_data) <- c('X1', 'X2')
+
+# Convert to dataframe for plotting
+swiss_roll_data <- as.data.frame(swiss_roll_data)
+
+ggplot(swiss_roll_data, aes(x = x, y = y)) +
+  geom_point(aes(color = swiss_roll_data[,3])) +
+  labs(title = 'Original Swiss Roll Data')
+
+# Plot the original Swiss roll data set and the embedded Swiss roll data set
+ggplot(lle_emb_data, aes(x = X1, y = X2)) +
+  geom_point(aes(color = swiss_roll_data[,3])) +
+  labs(title = 'LLE Embedding of Swiss Roll Data')
+\end{lstlisting}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{Swiss Roll Data - Original.png}
+    \caption{Illustration of original Swiss roll data}
+    \label{fig:my_label}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{Swiss Roll Data - LLE Embedding.png}
+    \caption{Illustration of transformed Swiss roll data with LLE}
+    \label{fig:my_label}
+\end{figure}
+
+\section{Conclusion}
+LLE has a wide range of applications, including: data visualization (in order to visualize high-dimensional image data), machine learning (in order to reduce the dimensionality of data before training a support vector machine or a neural network), and anomaly detection (in order to detect fraudulent credit card transactions or network intrusions).
+LLE has some advantages in that it better manages to preserve the non-linear relationships in the data compared to other dimensionality reduction techniques and is computationally more efficient when regarding space and time.
+However, it is particularly sensitive to noise and outliers in the data as it considers the local neighbours of each data point when computing the embedding.
+
+\bibliography{biblist}
+
+
+\end{document}

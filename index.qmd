@@ -1,0 +1,191 @@
+# Glossary {.unnumbered}
+
+## Abbreviations
+
+BDP
+
+:   Buildup Disruption Percentage
+
+DAxT
+
+:   Defensive Action expected Threat
+
+EPL
+
+:   English Premier League
+
+PPDA
+
+:   Passes Per Defensive Action
+
+VPEP
+
+:   Valuing Pressure Events by Estimating Probabilities
+
+WSL
+
+:   Women's Super League
+
+xA
+
+:   expected Assists
+
+xG
+
+:   expected Goals
+
+xT
+
+:   expected Threat
+
+## Parameters
+
+These are for illustrative purposes for now...
+
+$\text{BDP}$
+
+:   Buildup Disruption Percentage
+
+$\text{DxAT}$
+
+:   Defensive Action expected Threat
+
+$\text{PPDA}$
+
+:   Passes Allowed Per Defensive Action
+
+$\text{PSR}$
+
+:   Pressing Success Rate
+
+$\text{VPEP}$
+
+:   Valuing Pressure Events by Estimating Probabilities
+
+$\text{xG}$
+
+:   expected Goals
+
+$\text{xT}$
+
+:   expected Threat
+
+## Nomenclature
+
+$P_{win}$
+
+:   *Probability of winning the ball*
+
+$P_{goal/chance}$
+
+:   *Probability of conceding a goal-scoring chance
+
+$t$
+
+:   *Time variable used in pressing analysis (e.g., time to recover possession)*
+
+$x$
+
+:   *Spatial location on the field (x-coordinate)*
+
+$y$
+
+:   *Spatial location on the field (y-coordinate)*
+
+$w$
+
+:   *Weight or significance of pressing action*
+
+$\mu$
+
+:   *Mean (average pressing intensity or event probability)*
+
+$\sigma$
+
+:   *Variance (to represent variability in pressing effectiveness)*
+
+## Terminology
+
+**ball recovery**
+
+:   the act of regaining possession of the ball, typically following a press or interception
+
+**batch**
+
+:   subset of training data used in one iteration
+
+**compactness**
+
+:   the degree to which a team stays close together, minimising space for opponents to exploit
+
+**counter-press**
+
+:   the act of pressing immediately after losing possession, often within a few seconds
+
+**defensive transition**
+
+:   the phase in which a team shifts from attack to defence, often involving immediate pressing to regain possession
+
+**dropout**
+
+:   optimise by randomly dropping out neurons during training
+
+**epoch**
+
+:   one pass through the entire training dataset
+
+**expected Goals (xG)**
+
+:   a metric that quantifies the likelihood of a shot resulting in a goal, based on historical shot data
+
+**expected Assists (xA)**
+
+:   a measure of the likelihood that a pass will result in a goal
+
+**formation**
+
+:   tactical arrangement of players on the pitch (e.g. 4-4-2, 3-5-2)
+
+**gegenpressing**
+
+:   a high-intensity pressing tactic that emphasises immediate pressure after losing possession to force errors from the opponent
+
+\*\*
+
+:   derivative of cost w.r.t. model parameters
+
+**line-breaking pass**
+
+:   a pass that bypasses one or more defensive lines, putting the opposing team at a tactical disadvantage
+
+**optimizer**
+
+:   algorithm used to minimise the cost function
+
+**overfitting**
+
+:   model is memorising the training data and not generalising well to new data
+
+**pressing**
+
+:   defensive tactic where players apply pressure on opponents to regain possession quickly
+
+**regularisation**
+
+:   optimisation by adding a penalty term to the loss function
+
+**spatial analysis**
+
+:   analysis that takes into account player positions and movements on the pitch.
+
+**turnover**
+
+:   gaining possession from the opponent, often as a result of successful pressing
+
+**underfitting**
+
+:   model is not able to learn the underlying patterns in the data
+
+**zone-pressing**
+
+:   pressing applied within a specific area or zone of the pitch

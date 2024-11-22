@@ -1,0 +1,36 @@
+---
+title: "statsbomb_eda"
+editor: visual
+---
+
+```{r}
+#| label: libraries
+
+library(StatsBombR)
+library(dplyr)
+library(ggplot2)
+
+```
+
+```{r}
+#| label: data_load
+
+Comp_all <- FreeCompetitions() %>%
+  filter(competition_id == 9 & season_id == 281 |
+         competition_id == 9 & season_id == 27 |
+         competition_id == 1267 |
+         competiton_id == 223)
+# Matches <- FreeMatches(Comp)
+# all_events <- free_allevents(MatchesDF = Matches, Parallel = T)
+# all_events <- allclean(all_events)
+```
+
+```{r}
+#| label: data_load_360
+
+all_events_360 <- free_allevents_360(MatchesDF = Matches, Parallel = T)
+all_events <- all_events %>%
+  left_join(all_events_360, by = c("id" = "id")) %>%
+  rename(match_id = match_id.x) %>%
+  select(-match_id.y)
+```

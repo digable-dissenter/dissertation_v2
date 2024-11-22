@@ -1,0 +1,94 @@
+\setcounter{page}{1}
+\renewcommand{\thepage}{\arabic{page}}
+
+## Background {#sec-intro}
+
+The rise of data analytics in football has revolutionised the way we understand and analyse the game. Where once intuition and subjective observation reigned supreme, now objective metrics and sophisticated algortihms provide unprecedented insights into player performance, tactical strategies, and even the essence of winning. Indeed, the prevalence of data analytics and machine learning in association football (or soccer) has grown rapidly, with the volume of its analytics output approaching those of other sporting codes such as baseball, cricket, and basketball [@rico-gonzálezmarkel2023; @herold2019]. This data-driven revolution has fueled a deeper exploration of pressing, a tactical element that has become increasingly crucial in modern football.
+
+Pressing is a defensive tactic where a team without possession applies coordinated pressure on opponents to regain the ball quickly [@]. This approach disrupts build-up
+
+Football’s suitability to analytics has given rise to numerous use cases pertaining to the analysis of player performance metrics, such as passing and positioning, and the strategic decision-making processes employed by coaches. One fundamental tactic analysed is pressing, a defensive strategy where the team without possession aggressively attempts to regain the ball. Pressing disrupts the opponent’s build-up play, forces errors, and facilitates quick transitions to offence, making it a cornerstone of modern football.
+
+The tactical importance of pressing lies in its ability to enhance a team's defensive organisation while simultaneously facilitating offensive transitions. Advanced pressing styles, such as high pressing, have been shown to increase the likelihood of recovering the ball in advanced areas of the pitch, thereby allowing teams to capitalise on their opponents' disorganisation following a turnover [@brindescu2021; @modric2023; @fernandez-navarro2020]. For instance, research indicates that teams employing high-pressing tactics can effectively limit the opponent's time on the ball, forcing them into hurried decisions and mistakes [@low2021porous; @forcher2023]. This can lead to a higher frequency of goal-scoring opportunities, as teams can exploit the spaces left by opponents who are caught out of position during pressing situations [@cooper2020impact; @fernandes2020].
+
+Moreover, the effectiveness of pressing is closely linked to the physical demands placed on players. Studies have shown that pressing requires high-intensity running and quick recovery periods, which can significantly affect players' physiological performance [@ju2023contextualised; @bortnik2022mean]. The ability to maintain high levels of intensity during pressing phases is crucial, as it not only impacts the immediate success of regaining possession but also influences overall match performance [@carr2020differences; @fernandez-navarro2019]. Teams that can sustain effective pressing throughout the match tend to have better outcomes, as they can maintain pressure on the opponent and create more scoring chances [@modric2023; @liu2023characterization].
+
+Additionally, tactical execution of pressing is influenced by various factors contextual factors, including the quality of the opponent and the match situation. Research suggests that the effectiveness of pressing strategies can vary depending on these situational variables, highlighting the need for teams to adapt their pressing tactics based on the context of the match [@toda2022evaluation; @ruan2022quantifying]. For example, teams may choose to implement a more aggressive pressing strategy against weaker opponents while adopting a more conservative approach against stronger teams [@bauer2023; @forcher2024compact].
+
+## Problem Domain
+
+In modern football, the effectiveness of pressing as a defensive strategy is widely recognised, yet its direct relationship with different formations remains under-explored. While pressing disrupts the opponent's build-up play and creates opportunities for quick transitions to offence, the choice of formation significantly influences how well pressing tactics can be implemented. Despite the growing body of research on individual pressing tactics and formation analysis, there is a notable gap in understanding how formations directly impact the success rate of pressing across different phases of play.
+
+Moreover, while the effectiveness of pressing as a tactical approach is well-documented, the specific impact of pressing on subsequent offensive opportunities, as measured by xT and xG, has not been thoroughly investigated. This research seeks to address these gaps by examining how pressing in different areas of the pitch affects xT and whether sequences following a successful press lead to significant increases in xT and xG. These under-explored areas present a critical opportunity for research, particularly in the context of optimising team performance through data-driven decision-making.
+
+## Motivation
+
+The rationale for this research is driven by recent studies that underscore the critical role of pressing in achieving success on the football pitch. Despite the recognition of pressing as a key tactical element, existing research has primarily focused on individual pressing metrics or formation analysis as often separate entities. This study seeks to bridge the gap by exploring the direct relationship between formations and pressing effectiveness, offering a novel approach that could impact football strategy and performance optimisation.
+
+By integrating these two aspects, this research aims to provide coaches, analysts, and teams with actionable insights that could enhance their ability to implement effective pressing strategies tailored to specific formations. The findings from this study have the potential to inform both tactical planning and in-game adjustments, ultimately controbuting to more successful outcomes on the pitch.
+
+## Research Aims and Objectives
+
+This research aims to quantify the effectiveness of pressing not only in terms of defensive disruption, but also in its ability to create offensive opportunities. Specifically, the objectives are to analyse the delta change in xT following pressing events and examining the relationship between pressing effectiveness and the generation of high-quality scoring chances, as indicated by xG.
+
+## Contribution and Beneficiaries
+
+This research contributes to the field of football analytics by offering a comprehensive analysis of how different formations influence pressing effectiveness. The findings from this study could benefit multiple stakeholders, including:
+
+-   Coaches: By identifying formations that optimise pressing effectiveness, coaches can better tailor their tactical approaches to their team's strengths and the specific demands of a match.
+
+-   Football Analysts: The study introduces new metrics and analytical frameworks that can be used to evaluate team performance more effectively, particularly in the context of pressing strategies.
+
+-   Teams and Players: A deeper understanding of the interaction between formations and pressing can guide player recruitment, training, and in-game tactical decisions, ultimately leading to better team performance on the pitch.
+
+## Research Questions
+
+This dissertation aims to address the following research questions:
+
+-   How do formations influence pressing success rates?
+-   Are there specific game situations (e.g., trailing in the second half) where formations influence pressing effectiveness?
+-   Which player positions within a formation (e.g., defensive midfielders vs. wingers) are most crucial for successful pressing?
+-   Do teams adapt their pressing style depending on the opponent, partocularly when facing stronger or weaker teams, or in different competitions, such as domestic leagues versus international tournaments?
+-   How does the location of a pressing event influence the subsequent change in xT?
+-   What is the impact of sequences of actions following a successful press on the increase in xT?
+-   Is there a significant relationship between pressing effectiveness and the quality of scoring opportunities as measured by xG?
+
+## Problem Redefined
+
+The pressing challenge in football is not just about the intensity or frequency of pressing actions, but about how these actions are shaped by the formation employed by the team's formation. To date, there has been limited research on the interplay between formations and pressing effectiveness. This study redefines the problem by focusing on the quantitative analysis of pressing within the context of different formations. The goal is to uncover patterns and insights that could lead to more effective tactical decisions and enhance the overall understanding of how formations shape pressing outcomes.
+
+## Thesis Structure
+
+This mini dissertation is divided into the following chapters:
+
+-   ***Chapter 1 - Introduction***: Begins by discussing the importance of pressing in football and introduces the research problem.
+
+-   ***Chapter 2 - Literature Review***: Evaluates existing research on pressing tactics, formation analysis, and the intersection of the two, identifying gaps that this study aims to address.
+
+-   ***Chapter 3 - Materials and Methods***: Describes the data sources, analytical methods, and tools used to explore the research questions, with a focus on analysing the relationship between pressing actions and subsequent changes in xT and xG.
+
+-   ***Chapter 4 - Results***: Presents the findings of the analyses, with a focus on how different formations impact pressing effectiveness and the resulting offensive opportunities.
+
+-   ***Chapter 5 - Discussion***: Interprets the results, discussing their implications for football tactics and strategy, and how they contribute to the existing knowledge in the field.
+
+-   ***Chapter 6 - Conclusion***: Sumarises key findings, discusses their significance, and suggests areas for future research, particularly in the optimisation of pressing strategies.
+
+-   ***References***: Lists all sources cited in the dissertation, following the required citation style (APA).
+
+-   ***Appendix***: Contains supplementary material, such as detailed data descriptions, additional analyses, and code, providing further context and support for the research.
+
+Chapter 3 will cover the methodological approaches used to formation analysis and its relationship with pressing effectiveness as well as pressing actions and subsequent changes in xT and xG. The results of these analyses will be presented in Chapter 4, followed by a discussion of their implications for football tactics in Chapter 5.
+
+## Data Overview
+
+The dataset used for this research is sourced from several established football data providers, primarily the *StatsBombR* and *worldfootballR* R packages. The data comprises a comprehensive collection of match events, player metrics, and formation information, facilitating a detailed analysis of pressing effectiveness across different formations.
+
+[**Data Sources:**]{.underline}
+
+-   StatsBomb Open Data (accessed through StatsBombR package): Provides detailed match event and tracking data such as tackles, interceptions, pressures, and recoveries, which are crucial for analysing pressing actions. StatsBomb requires that their data be credited appropriately when used in research.
+
+-   worldfootballR: Supplements the StatsBomb data by extracting relevant player and match event data from platforms such as FBRef and Understat, including formation details and player positions. This data will be used to enhance the analysis where additional insights are needed.
+
+These data sources collectively enable a robust analysis of how different formations impact pressing effectiveness and subsequent offensive opportunities.
+
+\newpage
