@@ -1,0 +1,105 @@
+# Literature Review
+
+Football is a spectacle of precision and intensity.
+
+Thinking about football and how to play it successfully is almost as old as the game itself, with the arrangement of players on the pitch recognised as making a significant difference, even as far back as the 1870s [@memmert2018; @wilson2010]. What we now understand as football tactics goes back to the beginning of the sport [@memmert]. In its earliest forms, football in medieval Britain was a violent, unruly, and anarchic "mob game" with rules varying by location [@wilson].
+
+Modern football began to emerge in the early nineteenth century in English public school, where sport was seen as a tool for moral edification, necessitating the development of a coherent set of rules before tactics could evolve. Even by the end of the nineteenth century, formations were just beginning to emerge and were rarely subjected to much thought [@wilson2010].
+
+## The Importance of Pressing Effectiveness and its Relationship to Formations in Football
+
+Pressing is a defensive strategy in football whereby the team without possession aggressively puts pressure on the opponent who is in possession of the ball [@brindescu2021. The objective is to limit the opponent's time to pass the ball and make plays, ideally forcing a mistake such as a bad pass or a turnover [@brindescu2021]. Teams that are effective at pressing are able to win the ball back quickly and transition into attack [@brindescu2021; @low2018].
+
+The concept of pressing has grown in importance in recent years as a tactical element of the game [@andrienko2017; @robberechts2019]. The successes of high-profile teams and coaches that employ a pressing style of play have made it a popular focus of discussion among fans, commentators, and analysts [@andrienko2017; @robberechts2019].
+
+Understanding pressing effectiveness is crucial in football as it directly impacts team performance [@modric2022; @modric2023]. Research shows that successful team pressing influences team technical-tactical performance (TTP) significantly, leading to increased actions like shots on target, passes, key passes, crosses, dribbles, and entries into the final third and penalty area [@modric2022; @modric2023]. Moreover, the co-operative and well-organized interaction between players during pressing plays a more vital role in TTP than pure physical performance [@modric2023]. Individual actions, such as pressing, are fundamental in modern football, with higher praxeological parameters of these actions correlating with better sports results and team performance [@modric2023].
+
+Pressing has historically been difficult to analyse because it is a complex phenomenon involving multiple players and different objectives, which are hard to quantify [@merckx2021].
+
+### Pressing: From its Beginnings to Widespread Adoption
+
+The evolution of pressing has been a continuous interplay between tactical innovation, player development, and advancements in sports science. From its early forms to the modern high-intensity approaches, pressing has become a fundamental tactic in modern football, highlighting the importance of proactive defending and quick transitions.
+
+While the idea of pressing can be traced back to the early days of football, its implementation and effectiveness have evolved significantly alongside the sport itself. Early instances of pressing, like the "Volga Clip" used by Krylya Sovetov Kuibyshev in the 1940, involved one half-back dropping deep, enabling the center-half to sweep behind the full-backs. This system, similar to the Swiss *verrou*, aimed to limit space for opponents [@wilsonjonathan2013]. The development of pressing was accelerated by the rise of zonal defending and a focus on regaining possession quickly [@coxmichaelw.2019].
+
+The development of pressing was accelerated by the rise of zonal defending and a focus on regaining possession quickly [@coxmichaelw.2019].
+
+The Dynamo Kyiv team in the 1960s is credited with being one of the first to utilise pressing effectively. Their system involved players hunting in packs, closing down opponents, and winning the ball in unexpected areas of the pitch [@wilsonjonathan2013].
+
+The effectiveness of pressing was also boosted by advancements in sports science and nutrition, allowing players to maintain the required intensity for longer durations [@wilsonjonathan2013].
+
+*Total Football*, pioneered by Ajax in the 1970s, heavily featured pressing. Their aggressive man-marking of opposing playmakers, combined with their high defensive line aimed at catching opponents offside, became hallmarks of the Dutch approach [@coxmichaelw.2019; @wilsonjonathan2013].
+
+While other teams, such as Dynamo Kyiv, adopted pressing tactics, its adoption wasn't universal [@wilsonjonathan2013]. The spread of pressing was "curiously patchy" due to factors like the physical demands it placed on players and the differing tactical philosophies across different regions [@wilsonjonathan2013].
+
+AC Milan, inspired by Total Football, further revolutionised pressing in the late 1980s. Their system was highly organised and focused on controlling space [@coxmichaelw.2019; @wilsonjonathan2013].
+
+FC Barcelona revitalised pressing in the late 2000s and early 2010s, emphasising winning the ball back quickly in the opponent's half [@coxmichaelw.2017].
+
+Borussia Dortmund and later Liverpool popularised the concept of gegenpressing, which focuses on immediately winning the ball back after losing possession. This approach challenged the traditional understanding of phases of play and demonstrated the effectiveness of a high-energy, coordinated press [@coxmichaelw.2017; @coxmichaelw.2019].
+
+Pressing became increasingly common in the Bundesliga and eventually spread to spread the Premier League, notably influenced by foreign managers entering the league [@coxmichaelw.2017; @coxmichaelw.2019].
+
+### Key Themes and Areas of Focus
+
+## Pressing Analysis in Football
+
+### How is Pressing Analysed in Football?
+
+Pressing in football is currently analysed through various methods. Studies have shown that successful defensive plays exhibit higher defensive pressure, especially towards the end of a defensive sequence and closer to the ball [@forcher2022]. Automated detection of pressing strategies, like counterpressing, has been achieved using machine learning models, saving time and standardising the analysis process [@bauer2021]. Computational approaches have been proposed to estimate pressure relationships during a game, visualising defending players' pressure on the ball and opponents, aiding in detailed analysis of team tactics [@andrienko2017; @andrienko2018]. Research also indicates that successful team pressing positively influences team technical-tactical performance, emphasizing the importance of co-ordinated player interaction in pressing strategies [@modric2022]. These findings collectively highlight the significance of defensive pressure analysis in understanding and optimising team performance in football.
+
+## Different Types of Pressing Strategies
+
+### High Press
+
+In football, two primary pressing strategies are commonly employed: high-press defending and deep-defending. Research by [@low2021] compared these strategies. High-press defending involves players pressing the opposition closer to their goal, aiming to win the ball back quickly and disrupt the opponent's build-up play. On the other hand, deep-defending sees players defending deeper on the field, often closer to their own goal, focusing on maintaining defensive shape and limiting space for the opposition to exploit. The study [@low2021] found that high-press defending can lead to closer centroid distances, more regular movement patterns, decreased synchronisation patterns of effective playing space, lower physical demands in terms of distance covered, and player velocity, as well as reduced heart rates compared to deep defending.
+
+### Low-Block Defence
+
+Low-block defence in football impacts the opponent's strategy by creating challenges in breaking through the defensive line efficiently. The use of low block defence can restrict the opponent's ability to penetrate the defence due to the compact structure and reduced space available for attacking manoeuvres.
+
+### Midfield Press
+
+The midfield press in football significantly influences the opponent's strategy by applying pressure and disrupting their build-up play. Overall, the midfield press serves as a tactical tool to unsettle opponents, control play, and create scoring opportunities.
+
+### Counter-pressing
+
+Counter-pressing in football significantly influences the opponent's strategy by disrupting their transition play and creating immediate offensive opportunities [@bauer2021]. This strategic approach involves quickly regaining possession after losing the ball, pressuring the opponent to make hasty decisions, and potentially leading to turnovers. By automatically identifying and analysing counter-pressing situations through machine learning techniques, teams can assess the effectiveness of this tactic in terms of winning the ball back swiftly, generating scoring chances, and determining key success factors. The ability to adjust the counter pressure exerted on the opponent based on the forward pressure applied by the pressing team enhances the effectiveness of this strategy, creating a dynamic and adaptive defensive approach. Additionally, utilising counter-pressing can have defensive and offensive consequences for both teams, impacting the flow and outcome of the game.
+
+## Formation Analysis and Gameplay Influence
+
+### How are Formations Currently Analysed?
+
+Traditionally, notational analysis, based on average statistics and tallies, was used to analyse tactics
+
+### Influence of Formations on Attacking and Defensive Strategies in Football
+
+Tactical situations and playing styles are crucial performance indicators in soccer, influencing team strategies and outcomes. Research has shown significant differences in attack styles between European and South American teams, with European teams excelling in fast and positional attacks, while South American teams focus more on shots from outside the box and off-target shots . Additionally, a study comparing different age groups in football found that First teams demonstrate more final third entries, passes, crosses, and build-up play in wide areas compared to younger teams, highlighting the evolution of playing styles with age and experience [@dayusjacob2021]. Moreover, the impact of external factors like the COVID-19 pandemic has led to changes in performance indicators over the years, resulting in a more passive game with tighter results, emphasizing the need for teams to adapt their playing styles accordingly 
+
+## How Formations Impact Player Roles, Defensive Shape, Pressing Strategies. and Overall Gameplay
+
+### Commonly Used Formations in Football
+
+## Machine Learning and Automated Analysis
+
+### The Role of Data Analysis in Football Performance Evaluation
+
+Data analytics in football has revolutionised the way the sport is played, managed, and analysed. By leveraging vast amount of data, teams can gain insights into player performance, match strategies, and even financial decisions [@memmert2018].
+
+Football is an inherently dynamic and unpredictable sport, requiring complex and multifaceted strategies for success [@herold2019]. Traditionally, performance analysis in football has relied on statistics derived from manual notational analysis based on observational match events such as team possession, shots on targets, successful passes [@herold2019; @plakias2024; @rein2016]. Match event data is typically collected from video footage and assists coaches and analysts evaluate past football matches and prepare for future games [@herold2019]. However, these methods and metrics, while insighful, were time-consuming, often subjective often discard critical contextual information necessary for comprehensive tactical analysis [@rein2016].
+
+The dearth of knowledge on how various factors such as technical skill, individual physiology, and team formations hampers our understanding of how these factors affect tactical decision-making [@rein2016].
+
+### The Use of Statistical Methods, Machine Learning Techniques, and Data Visualisation Tools in Football Analysis
+
+Machine learning applications in men's professional football have been instrumental in enhancing attacking play. Studies have shown that expected goals (xG) models developed using machine learning techniques like Logistic Regression and Gradient Boosting can accurately predict xG probability values for players based on shots taken during matches [@hewitt2023]. Additionally, the analysis of key performance indicators related to attacking play in football has been a common practice among coaches and analysts, emphasizing the importance of leveraging data-driven insights to improve offensive strategies in professional football [@herold2019].
+
+### Recent Advances in Data-Driven Approaches to Studying Pressing Effectiveness and Formation Dynamics
+
+## Gap in Existing Literature: Pressing and Formations
+
+## Conclusion and Proposal Contribution
+
+```{=latex}
+\newpage
+```

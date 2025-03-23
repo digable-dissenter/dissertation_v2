@@ -1,0 +1,59 @@
+Data Overview
+
+The publicly available datasets used for this research are sourced from several established football data providers, primarily StatsBomb, FBRef, and WyScout. The data comprises a comprehensive collection of match events, player metrics, spatial data, and formation information, facilitating a detailed analysis of pressing effectiveness across different formations.
+
+Data Sources:
+
+StatsBomb Open Events and \*360 Data (accessed through StatsBombR package): Provides detailed match event (such as tackles, interceptions, pressures, and recoveries) and positional data (such as teammate and opposition locations during specific events) which are crucial for analysing pressing actions. StatsBomb requires that their data be credited appropriately when used in research. Through the StatsBombR events and 360 frames datasets, several complementary events and features are particularly relevant to analysisng pressing effectiveness in football.
+
+FBRef and Understat (accessed through the worldfootballR package): Supplements the StatsBomb data by extracting relevant player and match event data. Understat provides metrics such as PPDA, expected Assusts (xA), and more. FBRef in turn provides data for player and team-level statistics across leagues, formations, and in-game phases, providing a broader context for when and where pressing impacts game flow.
+
+WyScout's event data offers a spatio-temporal perspective, ideal for tracking pressing events over time and identifying key defensive or offensive actions that align with pressing moments. Provided by the study, [@pappalardoluca2019].
+
+These data sources collectively enable a robust analysis of how different formations impact pressing effectiveness and subsequent offensive opportunities.
+
+[@klemp2021] posit a definition of event and positional - or "tracking" - data as it pertains to capturing all events and movements on the pitch during gameplay. They describe event data as records of the individual actions that occur during a match, such as passes, shots, tackles, and interceptions., while describing positional data analysis in football as the practice of tracking and analysing the exact locations of every player on the pitch at any given moment during a match.
+
+StatsBomb's Impact on Football Analytics
+
+StatsBomb's detailed event data, particularly its inclusion of pressing information, has significantly advanced the analysis of defensive tactics in football. Researchers and analysts are using this data to develop new metrics, models, and insights that are helping to better understand and evaluate the effectiveness of pressing. This information can ultimately be used by coaches and teams to improve their defensive strategies and gain a competitive advantage.
+
+StatsBomb Data Features
+
+StatsBomb is a company that provides football event data, including detailed information about pressing actions [@merckx2021; @robberechts2019]. This data is valuable for analysing and quantifying the effectiveness of pressing in football.
+
+StatsBomb data includes "pressure events" which are triggered when a defending player comes within a certain radius of an opponent in possession of the ball [@merckx2021; @robberechts2019]. The radius varies depending on the context, with a larger radius used for goalkeepers under pressure. StatsBomb data additionally logs the location and duration of pressing events.
+
+StatsBomb's 360 data provides additional contextual information, such as the positions of other players on the pitch [@nascimento2023; @vanroy2021]. This allows for a more detailed analysis of pressing, including the positioning and availability of team-mates.
+
+StatsBomb 360 Data
+
+StatsBomb 360 data offers a more comprehensive understanding of game situations compared to conventional event data. The conventional data logs individual actions, like passes, shots, and tackles, but doesn't capture the complete off-ball context [@bauer2021]. StatsBomb 360 supplements this information with "snapshots" of player positioning for every action, provided that the player is visible on the broadcast video [@vanroy2021]. This added context includes player location and their relationship to the ball carrier (team-mate or opponent).
+
+One of the key advantages of 360 data lies in its ability to discern the reachability of teammates for a player in possession. This information, unique to StatsBomb 360 data, is not present in regular event streams [@vanroy2021]. By analysing player locations from the snapshots, it's possible to determine whether a team-mate is reachable in specific areas of the pitch, enabling a deeper understanding of passing options and build-up play.
+
+StatsBomb 360 data facilitates the analysis of how teams react to different defensive strategies. By encoding defensive set-ups (e.g. high block, low block, left-forcing block, right-forcing block) and reachable team-mate information into a Markov Decision Process (MDP) model, researchers can study how attacking teams adjust their build-up play based on the opponent's defensive organisation and the availability of passing options [@vanroy2021].
+
+The incorporation of reachable team-mate information from 360 data enhances the accuracy of predicting a player's intended target for an action, such as a pass or cross. Researchers can refine their models by boosting the probability of a state being the intended end state if a reachable team-mate is present in that state [@vanroy2021]. This refinement leads to more accurate predictions compared to models relying solely on conventional event data.
+
+StatsBomb's 360 data offering is valuable for a number of reasons. For one, coaches can analyse how opponents build up their attacks against different defensive set-ups and use this information to devise more effective defensive plans. Furthermore, by understanding the availability of passing options and the spatial context of a player's actions, it's possible to assess their decision-making and execution more accurately. Lastly, researchers can use the 360 data to study a wider range of tactical concepts, including pressing, counter-pressing, and build-up play, leading to a more comprehensive understanding of the game.
+
+Using StatsBomb Data to Analyse Pressing
+
+Researchers have developed rule-based approaches to identify pressing situations in football matches using StatsBomb data, including tracking data and additional rules to ensure the defending team is actively reducing space for the ball carrier [@merckx2021].
+
+The VPEP metric, developed using StatsBomb data, quantifies the effectiveness of pressing in different game scenarios, considering the trade-off between recovering the ball and the risk of leaving the defensive structure [@robberechts2019].
+
+StatsBomb data has been used to develop models that evaluate the risk and reward of pressing, providing insights into pressing behaviour and effectiveness [@robberechts2019].
+
+Researchers have used StatsBomb's 360 data to develop models for predicting the intended end states of actions and to analyse how a team reacts when players are blocked by opponents [@nascimento2023]. This information can be used to provide insights to coaches on how to optimally disrupt opponent build-up play.
+
+Limitations of StatsBomb Data
+
+While StatsBomb's pressure events provide valuable information, they don't fully capture the organisation and cohesion of the press behind the front players [@robberechts2019].
+
+The rule-based approach to identifying pressing events may sometimes include events where players are within the defined radius but not actively closing down the ball carrier.
+
+Comparison with Other Data Providers
+
+At the time of writing, StatsBomb is the only data provider that includes information about pressing in its event data. [@bauer2021] mentions another noteworthy approach aiming to detect counterattacks presented at an established football analytics conference, but no specific data provider is mentioned.

@@ -14,6 +14,11 @@ EPL
 
 :   English Premier League
 
+GABR
+
+: Generalised Action-based Ball Recovery Model
+
+
 PPDA
 
 :   Passes Per Defensive Action
@@ -108,19 +113,27 @@ $\sigma$
 
 **ball recovery**
 
-:   the act of regaining possession of the ball, typically following a press or interception
+:   the act of regaining possession of the ball, typically following a press or interception.
 
 **batch**
 
-:   subset of training data used in one iteration
+:   subset of training data used in one iteration.
 
 **compactness**
 
-:   the degree to which a team stays close together, minimising space for opponents to exploit
+:   the degree to which a team stays close together, minimising space for opponents to exploit.
+
+**counter-attacking**
+
+:   a playing philosophy focused on quickly attacking after regaining possession.
 
 **counter-press**
 
 :   the act of pressing immediately after losing possession, often within a few seconds
+
+**defensive strategies**
+
+:   these include overall approaches like deep-defending (maintaining a compact shape near the goal) and high-press (applying pressure high up the pitch).
 
 **defensive transition**
 
@@ -134,13 +147,19 @@ $\sigma$
 
 :   one pass through the entire training dataset
 
-**expected Goals (xG)**
 
-:   a metric that quantifies the likelihood of a shot resulting in a goal, based on historical shot data
 
 **expected Assists (xA)**
 
 :   a measure of the likelihood that a pass will result in a goal
+
+**expected Goals (xG)**
+
+:   a metric that quantifies the likelihood of a shot resulting in a goal, based on historical shot data
+
+**expected Threat (xT)**
+
+:   a metric designed to quantify the danger posed by having possession of the ball in a specific location on the pitch (or resulting  from a specific action).
 
 **formation**
 
@@ -158,6 +177,10 @@ $\sigma$
 
 :   a pass that bypasses one or more defensive lines, putting the opposing team at a tactical disadvantage
 
+**marking**
+
+:   defending players positioning themselves to restrict the movement and passing options of opponents
+
 **optimizer**
 
 :   algorithm used to minimise the cost function
@@ -165,6 +188,10 @@ $\sigma$
 **overfitting**
 
 :   model is memorising the training data and not generalising well to new data
+
+**passing patterns**
+
+:   the sequences and styles of passes between players that are considered part of offensive tactics
 
 **pressing**
 
@@ -189,3 +216,4 @@ $\sigma$
 **zone-pressing**
 
 :   pressing applied within a specific area or zone of the pitch
+
