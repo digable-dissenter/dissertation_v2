@@ -7,7 +7,7 @@ book:
   chapters: 
     - index.qmd 
     - chapters/chapter-01_introduction/_introduction.qmd
-    - chapters/chapter-02_literature_review/_literature_review.qmd
+#    - chapters/chapter-02_literature_review/_literature_review.qmd
 #    - chapters/chapter-03_material_methodology/methods.qmd
     - endmatter/bibliography/_references.qmd
 

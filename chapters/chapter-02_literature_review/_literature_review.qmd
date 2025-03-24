@@ -2,6 +2,8 @@
 
 Football is a spectacle of precision and intensity.
 
+The development of tactics is almost as old as the game itself, with early concerns focusing on how to play to win
+
 Thinking about football and how to play it successfully is almost as old as the game itself, with the arrangement of players on the pitch recognised as making a significant difference, even as far back as the 1870s [@memmert2018; @wilson2010]. What we now understand as football tactics goes back to the beginning of the sport [@memmert]. In its earliest forms, football in medieval Britain was a violent, unruly, and anarchic "mob game" with rules varying by location [@wilson].
 
 Modern football began to emerge in the early nineteenth century in English public school, where sport was seen as a tool for moral edification, necessitating the development of a coherent set of rules before tactics could evolve. Even by the end of the nineteenth century, formations were just beginning to emerge and were rarely subjected to much thought [@wilson2010].

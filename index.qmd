@@ -147,8 +147,6 @@ $\sigma$
 
 :   one pass through the entire training dataset
 
-
-
 **expected Assists (xA)**
 
 :   a measure of the likelihood that a pass will result in a goal
