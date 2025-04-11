@@ -1,5 +1,7 @@
 # Literature Review
 
+## Introduction
+
 Football is a spectacle of precision and intensity.
 
 The development of tactics is almost as old as the game itself, with early concerns focusing on how to play to win
@@ -8,17 +10,9 @@ Thinking about football and how to play it successfully is almost as old as the 
 
 Modern football began to emerge in the early nineteenth century in English public school, where sport was seen as a tool for moral edification, necessitating the development of a coherent set of rules before tactics could evolve. Even by the end of the nineteenth century, formations were just beginning to emerge and were rarely subjected to much thought [@wilson2010].
 
-## The Importance of Pressing Effectiveness and its Relationship to Formations in Football
+## The Evolution and Typology of Pressing
 
-Pressing is a defensive strategy in football whereby the team without possession aggressively puts pressure on the opponent who is in possession of the ball [@brindescu2021. The objective is to limit the opponent's time to pass the ball and make plays, ideally forcing a mistake such as a bad pass or a turnover [@brindescu2021]. Teams that are effective at pressing are able to win the ball back quickly and transition into attack [@brindescu2021; @low2018].
-
-The concept of pressing has grown in importance in recent years as a tactical element of the game [@andrienko2017; @robberechts2019]. The successes of high-profile teams and coaches that employ a pressing style of play have made it a popular focus of discussion among fans, commentators, and analysts [@andrienko2017; @robberechts2019].
-
-Understanding pressing effectiveness is crucial in football as it directly impacts team performance [@modric2022; @modric2023]. Research shows that successful team pressing influences team technical-tactical performance (TTP) significantly, leading to increased actions like shots on target, passes, key passes, crosses, dribbles, and entries into the final third and penalty area [@modric2022; @modric2023]. Moreover, the co-operative and well-organized interaction between players during pressing plays a more vital role in TTP than pure physical performance [@modric2023]. Individual actions, such as pressing, are fundamental in modern football, with higher praxeological parameters of these actions correlating with better sports results and team performance [@modric2023].
-
-Pressing has historically been difficult to analyse because it is a complex phenomenon involving multiple players and different objectives, which are hard to quantify [@merckx2021].
-
-### Pressing: From its Beginnings to Widespread Adoption
+### Historical Development of Pressing: From its Beginnings to Widespread Adoption
 
 The evolution of pressing has been a continuous interplay between tactical innovation, player development, and advancements in sports science. From its early forms to the modern high-intensity approaches, pressing has become a fundamental tactic in modern football, highlighting the importance of proactive defending and quick transitions.
 
@@ -41,6 +35,43 @@ FC Barcelona revitalised pressing in the late 2000s and early 2010s, emphasising
 Borussia Dortmund and later Liverpool popularised the concept of gegenpressing, which focuses on immediately winning the ball back after losing possession. This approach challenged the traditional understanding of phases of play and demonstrated the effectiveness of a high-energy, coordinated press [@coxmichaelw.2017; @coxmichaelw.2019].
 
 Pressing became increasingly common in the Bundesliga and eventually spread to spread the Premier League, notably influenced by foreign managers entering the league [@coxmichaelw.2017; @coxmichaelw.2019].
+
+## Typology of Pressing Strategies
+
+Pressing strategies in football can be broadly categorised based on their intensity, location on the pitch, and tactical objectives. These strategies are often tailored to the team's overall philosophy and the specific strengths and weaknesses of their players.
+
+### High Press
+The high press involves applying pressure on the opponent high up the pitch, often near their defensive third. This strategy aims to disrupt the opponent's build-up play and force turnovers in dangerous areas. Teams employing a high press often rely on coordinated movements and high physical intensity to close down passing lanes and regain possession quickly.
+
+### Midfield Press
+The midfield press focuses on applying pressure in the middle third of the pitch. This strategy aims to control the central areas and disrupt the opponent's progression through the midfield. It often involves a balance between defensive solidity and the ability to transition quickly into attack.
+
+### Low Block
+The low block is a more conservative pressing strategy, where the team defends deep in their own half. This approach prioritises defensive organisation and compactness, making it difficult for the opponent to penetrate the defensive lines. The low block is often used by teams looking to absorb pressure and counter-attack.
+
+### Counter-Pressing
+Counter-pressing, or "gegenpressing," involves immediately applying pressure to regain possession after losing the ball. This strategy is highly effective in disrupting the opponent's transition and creating quick scoring opportunities. Counter-pressing requires high levels of coordination, fitness, and tactical awareness.
+
+### Situational Pressing
+Situational pressing is a flexible approach where the intensity and location of pressing are adjusted based on specific game scenarios. Teams may choose to press aggressively in certain moments, such as after a turnover, or adopt a more passive approach when conserving energy or protecting a lead.
+
+Each pressing strategy has its advantages and trade-offs, and the choice of strategy often depends on the team's tactical philosophy, the opponent's strengths and weaknesses, and the context of the match.
+
+## Tactical Concepts and Roles Within Pressing 
+
+
+
+## The Importance of Pressing Effectiveness and its Relationship to Formations in Football
+
+Pressing is a defensive strategy in football whereby the team without possession aggressively puts pressure on the opponent who is in possession of the ball [@brindescu2021. The objective is to limit the opponent's time to pass the ball and make plays, ideally forcing a mistake such as a bad pass or a turnover [@brindescu2021]. Teams that are effective at pressing are able to win the ball back quickly and transition into attack [@brindescu2021; @low2018].
+
+The concept of pressing has grown in importance in recent years as a tactical element of the game [@andrienko2017; @robberechts2019]. The successes of high-profile teams and coaches that employ a pressing style of play have made it a popular focus of discussion among fans, commentators, and analysts [@andrienko2017; @robberechts2019].
+
+Understanding pressing effectiveness is crucial in football as it directly impacts team performance [@modric2022; @modric2023]. Research shows that successful team pressing influences team technical-tactical performance (TTP) significantly, leading to increased actions like shots on target, passes, key passes, crosses, dribbles, and entries into the final third and penalty area [@modric2022; @modric2023]. Moreover, the co-operative and well-organized interaction between players during pressing plays a more vital role in TTP than pure physical performance [@modric2023]. Individual actions, such as pressing, are fundamental in modern football, with higher praxeological parameters of these actions correlating with better sports results and team performance [@modric2023].
+
+Pressing has historically been difficult to analyse because it is a complex phenomenon involving multiple players and different objectives, which are hard to quantify [@merckx2021].
+
+
 
 ### Key Themes and Areas of Focus
 
