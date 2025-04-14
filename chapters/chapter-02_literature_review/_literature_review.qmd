@@ -43,21 +43,38 @@ Pressing strategies in football can be broadly categorised based on their intens
 ### High Press
 The high press involves applying pressure on the opponent high up the pitch, often near their defensive third. This strategy aims to disrupt the opponent's build-up play and force turnovers in dangerous areas. Teams employing a high press often rely on coordinated movements and high physical intensity to close down passing lanes and regain possession quickly.
 
+In football, two primary pressing strategies are commonly employed: high-press defending and deep-defending. Research by [@low2021] compared these strategies. High-press defending involves players pressing the opposition closer to their goal, aiming to win the ball back quickly and disrupt the opponent's build-up play. On the other hand, deep-defending sees players defending deeper on the field, often closer to their own goal, focusing on maintaining defensive shape and limiting space for the opposition to exploit. The study [@low2021] found that high-press defending can lead to closer centroid distances, more regular movement patterns, decreased synchronisation patterns of effective playing space, lower physical demands in terms of distance covered, and player velocity, as well as reduced heart rates compared to deep defending.
+
 ### Midfield Press
 The midfield press focuses on applying pressure in the middle third of the pitch. This strategy aims to control the central areas and disrupt the opponent's progression through the midfield. It often involves a balance between defensive solidity and the ability to transition quickly into attack.
 
 ### Low Block
 The low block is a more conservative pressing strategy, where the team defends deep in their own half. This approach prioritises defensive organisation and compactness, making it difficult for the opponent to penetrate the defensive lines. The low block is often used by teams looking to absorb pressure and counter-attack.
 
+Low-block defence in football impacts the opponent's strategy by creating challenges in breaking through the defensive line efficiently. The use of low block defence can restrict the opponent's ability to penetrate the defence due to the compact structure and reduced space available for attacking manoeuvres.
+
 ### Counter-Pressing
 Counter-pressing, or "gegenpressing," involves immediately applying pressure to regain possession after losing the ball. This strategy is highly effective in disrupting the opponent's transition and creating quick scoring opportunities. Counter-pressing requires high levels of coordination, fitness, and tactical awareness.
+
+### Counter-pressing
+
+Counter-pressing in football significantly influences the opponent's strategy by disrupting their transition play and creating immediate offensive opportunities [@bauer2021]. This strategic approach involves quickly regaining possession after losing the ball, pressuring the opponent to make hasty decisions, and potentially leading to turnovers. By automatically identifying and analysing counter-pressing situations through machine learning techniques, teams can assess the effectiveness of this tactic in terms of winning the ball back swiftly, generating scoring chances, and determining key success factors. The ability to adjust the counter pressure exerted on the opponent based on the forward pressure applied by the pressing team enhances the effectiveness of this strategy, creating a dynamic and adaptive defensive approach. Additionally, utilising counter-pressing can have defensive and offensive consequences for both teams, impacting the flow and outcome of the game.
 
 ### Situational Pressing
 Situational pressing is a flexible approach where the intensity and location of pressing are adjusted based on specific game scenarios. Teams may choose to press aggressively in certain moments, such as after a turnover, or adopt a more passive approach when conserving energy or protecting a lead.
 
 Each pressing strategy has its advantages and trade-offs, and the choice of strategy often depends on the team's tactical philosophy, the opponent's strengths and weaknesses, and the context of the match.
 
-## Tactical Concepts and Roles Within Pressing 
+### Tactical Concepts and Roles Within Pressing 
+
+
+
+### Tactical Concepts Within Pressing
+
+
+### Tactical Trade-Offs
+
+
 
 
 
@@ -85,19 +102,17 @@ Pressing in football is currently analysed through various methods. Studies have
 
 ### High Press
 
-In football, two primary pressing strategies are commonly employed: high-press defending and deep-defending. Research by [@low2021] compared these strategies. High-press defending involves players pressing the opposition closer to their goal, aiming to win the ball back quickly and disrupt the opponent's build-up play. On the other hand, deep-defending sees players defending deeper on the field, often closer to their own goal, focusing on maintaining defensive shape and limiting space for the opposition to exploit. The study [@low2021] found that high-press defending can lead to closer centroid distances, more regular movement patterns, decreased synchronisation patterns of effective playing space, lower physical demands in terms of distance covered, and player velocity, as well as reduced heart rates compared to deep defending.
+
 
 ### Low-Block Defence
 
-Low-block defence in football impacts the opponent's strategy by creating challenges in breaking through the defensive line efficiently. The use of low block defence can restrict the opponent's ability to penetrate the defence due to the compact structure and reduced space available for attacking manoeuvres.
+
 
 ### Midfield Press
 
 The midfield press in football significantly influences the opponent's strategy by applying pressure and disrupting their build-up play. Overall, the midfield press serves as a tactical tool to unsettle opponents, control play, and create scoring opportunities.
 
-### Counter-pressing
 
-Counter-pressing in football significantly influences the opponent's strategy by disrupting their transition play and creating immediate offensive opportunities [@bauer2021]. This strategic approach involves quickly regaining possession after losing the ball, pressuring the opponent to make hasty decisions, and potentially leading to turnovers. By automatically identifying and analysing counter-pressing situations through machine learning techniques, teams can assess the effectiveness of this tactic in terms of winning the ball back swiftly, generating scoring chances, and determining key success factors. The ability to adjust the counter pressure exerted on the opponent based on the forward pressure applied by the pressing team enhances the effectiveness of this strategy, creating a dynamic and adaptive defensive approach. Additionally, utilising counter-pressing can have defensive and offensive consequences for both teams, impacting the flow and outcome of the game.
 
 ## Formation Analysis and Gameplay Influence
 

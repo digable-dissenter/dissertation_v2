@@ -1,0 +1,97 @@
+\documentclass[12pt]{article}
+\usepackage[english]{babel}
+\usepackage[square,numbers]{natbib}
+\usepackage[
+backend=biber,
+style=authoryear,
+]{biblatex}
+\addbibresource{references.bib}
+% \bibliographystyle{apalike}
+\usepackage{url}
+\usepackage[utf8x]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\graphicspath{{images/}}
+\usepackage{parskip}
+\usepackage{fancyhdr}
+\usepackage{vmargin}
+\usepackage{float}
+\usepackage{booktabs} % Required for inserting images
+\usepackage{listings}
+\setmarginsrb{3 cm}{2.5 cm}{3 cm}{2.5 cm}{1 cm}{1.5 cm}{1 cm}{1.5 cm}
+
+\title{Quantifying Pressing Effectiveness and Its Impact on Formations in Football}
+\author{Kenneth Ssekimpi}
+\date{\today}
+
+\makeatletter
+\let\thetitle\@title
+\let\theauthor\@author
+\let\thedate\@date
+\makeatother
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\theauthor}
+\lhead{\thetitle}
+\cfoot{\thepage}
+
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{titlepage}
+        \centering
+    \vspace*{0.5 cm}
+    \includegraphics[scale = 0.75]{UCT Logo.jpg}\\[1.0 cm]
+    \textsc{\LARGE University of Cape Town}\\[0.5 cm]	% University Name
+    \textbf{\Large STA5093W: Data Science Minor Dissertation}\\[0.5 cm]				% Course Code
+	\textbf{\large Introduction}\\[0.5 cm]				% Course Name
+	\rule{\linewidth}{0.2 mm} \\[0.4 cm]
+	{ \huge \bfseries \thetitle}\\
+	\rule{\linewidth}{0.2 mm} \\[1.5 cm]
+	
+	\begin{minipage}{0.4\textwidth}
+		\begin{flushleft} \large
+			\emph{Student:}\\
+			\theauthor \\
+			\end{flushleft}
+			\end{minipage}~
+			\begin{minipage}{0.4\textwidth}
+			\begin{flushright} \large
+			\emph{Supervisor:} \\
+			Neil Watson									
+		\end{flushright}
+	\end{minipage}\\[2 cm]
+
+%\today \\
+Student Number: SSKKEN001 \\
+
+	
+\end{titlepage}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\tableofcontents
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introduction}
+
+
+\subsection{Background}
+
+Association football, also known as soccer, is a game played by two teams of 11 players each. Teams compete by advancing a ball into their opponent's goal, adhering to established rules that govern gameplay, player conduct, and scoring, with the aim to score more goals than their rivals (\cite{memmert_data_2018}; \cite{sumpter_soccermatics_2016}). Although the fundamental simplicity of football contributes significantly to its global popularity, the game simultaneously possesses incredible complexity characterised by movement patterns, match plans, playing philosophies, and creativity. These qualities are collectively referred to as football tactics (\cite{memmert_data_2018}).
+
+Football tactics involve strategically positioning players on the field and co-ordinating their movements to maximise the chances of winning matches. This encompasses both the formation that a team adopts (that is, the spatial arrangement of players on the pitch) and their overall style of play (\cite{wilson_inverting_2010}). Furthermore, (\cite{rein_big_2016}) describe football tactics as the actions and strategies implemented by a team and its players during a match to achieve specific goals, primarily winning the game. These actions are typically adaptations to dynamically changing situations in the match and the behaviour of the opposing team, managing space, time, and individual actions on the pitch.
+
+A critical component of these tactical deployments, especially in modern football, is a defensive tactic known as pressing. Pressing requires co-ordinated teamwork aimed at swiftly regaining possession through targeted defensive pressure on opponents to limit their spatial options and disrupt their offensive play. Pressing involves players actively closing down opponents who have the ball and blocking potential passing lanes (\cite{borbely_all_2018}).
+
+Given the tactical importance of pressing, accurately measuring its effectiveness is essential. Recent advancements in data analytics and machine learning have accelerated the development of sophisticated metrics to achieve this (\cite{link_data_2018}; \cite{memmert_data_2018}; \cite{rein_big_2016}; \cite{rico-gonzalez_markel_machine_2023}). Data analytics has revolutionised the way football is understood today. While intuition and subjective observation once dominated, objective metrics and algorithms now offer deeper insights into performance, tactics, and outcomes (\cite{memmert_data_2018}). Football analytics now rivals analytics in established sports like baseball, cricker, and basketball in sophistication and insight (\cite{herold_machine_2019}; \cite{rico-gonzalez_markel_machine_2023}). This data-driven revolution has encouraged deeper exploration into pressing as a vital tactical strategy.
+
+Pressing has emerged as a defining tactical element in modern football capable of transforming defence into attack and significantly influencing the flow and tempo of the game. Pressing disrupts opponents, forces turnovers, and creates goal-scoring opportunities, establishing itself as a cornerstone of contemporary football tactics (\cite{robberechts_valuing_2019}).
+
+Effective pressing strategies, particularly high pressing styles, increase the likelihood of regaining possession in advanced areas of the pitch, enabling teams to capitalise on their opponents' disorganisation following a turnover (\cite{brindescu_study_2021}; \cite{fernandez-navarro_evaluating_2019}; \cite{modric_influence_2023}). Research indicates high-pressing tactics can effectively limit the opponent's time on the ball, forcing hurried decisions and mistakes (\cite{forcher_is_2023}; \cite{low_porous_2021}). This can lead to a higher frequency of goal-scoring opportunities, as teams can exploit the spaces left by opponents who are caught out of position during pressing situations (\cite{cooper_impact_2020}; \cite{fernandes_how_2020}).
+
+Pressing fulfills a dual tactical role, enhancing defensive solidity and creating attacking opportunities. Nonetheless, its effectiveness strongly depends on players' physical capacities. Studies demonstrate that pressing demands high-intensity running and quick recovery period, significantly impacting physiological performance (\cite{bort}
+
+\printbibliography
+\end{document}
